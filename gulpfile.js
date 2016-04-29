@@ -20,4 +20,15 @@ gulp.task('devel', ['less', 'devel-app-js', 'devel-vendor-js'], function() {
   gulp.watch(['src/index.html', 'src/app/**/*.html', 'build/**/*'], function(file) {
     server.notify.apply(server, [file]);
   });
+
+  process.on('uncaughtException', function(err) {
+    console.error('uncaughtException: ', err);
+    console.error(err.stack);
+
+    server.stop().then(function() {
+      console.log('server stopped');
+      process.exit(-1);
+    })
+  });
+
 });
