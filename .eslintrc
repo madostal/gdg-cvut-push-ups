@@ -17,7 +17,7 @@
       1,
       "always"
     ],
-    "angular/controller-as-vm": 1
+    "angular/controller-as-vm": 0
   },
   "env": {
     "browser": true
