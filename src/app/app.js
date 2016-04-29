@@ -38,11 +38,11 @@
       $rootScope.$on('$stateNotFound',
         function(event, toState, fromState, toParams, fromParams, error){
           console.error(error, toState, fromState, toParams, fromParams);
-        })
+        });
 
       $rootScope.$on('$stateChangeError',
         function(event, toState, fromState, toParams, fromParams, error){
           console.error(error, toState, fromState, toParams, fromParams);
-        })
+        });
     });
 })();

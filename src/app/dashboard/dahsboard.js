@@ -7,8 +7,7 @@
   ])
     .config(function($stateProvider) {
 
-      $stateProvider.state('dashboard', {
-        parent: 'app',
+      $stateProvider.state('app.dashboard', {
         url: 'dashboard',
         templateUrl: 'app/dashboard/dashboard.template.html',
         controller: 'DashboardController',
