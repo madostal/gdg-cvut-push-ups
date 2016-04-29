@@ -8,6 +8,9 @@
       'cz.angular.simpleDevstack.dashboard',
       'cz.angular.simpleDevstack.activity'
     ])
+
+    .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
+
     .config(function($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.otherwise('/login');
@@ -22,12 +25,6 @@
           templateUrl: 'app/app.html',
           abstract: true
         })
-        .state('app.dashboard', {
-          url: 'dashboard',
-          controller: 'DashboardController',
-          controllerAs: 'dashboard',
-          templateUrl: 'app/dashboard/template.html'
-        })
         .state('app.devel-form', {
           url: 'activity/devel/form',
           templateUrl: 'app/_tmp/form-template.html'
@@ -37,8 +34,15 @@
           templateUrl: 'app/_tmp/table-template.html'
         });
     })
-    .controller('BaseController', function() {
-      this.ngVersion = angular.version;
-    });
+    .run(function($rootScope) {
+      $rootScope.$on('$stateNotFound',
+        function(event, toState, fromState, toParams, fromParams, error){
+          console.error(error, toState, fromState, toParams, fromParams);
+        })
 
+      $rootScope.$on('$stateChangeError',
+        function(event, toState, fromState, toParams, fromParams, error){
+          console.error(error, toState, fromState, toParams, fromParams);
+        })
+    });
 })();
