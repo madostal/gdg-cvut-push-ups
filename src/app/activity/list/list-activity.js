@@ -1,16 +1,19 @@
 (function() {
 
-  var ListActivityController = function(activities) {
+  var ListActivityController = function(activities, Activity) {
     this.activities = activities;
 
-    this.delete = function(activity) {
+    this.page = 1;
 
-      activity.$delete().then(function() {
-        var index = this.activities.indexOf(activity);
-        this.activities.splice(index, 1);
+    this.reload = function() {
+      Activity.query({page: this.page}, function(activities) {
+        this.activities = activities;
       }.bind(this));
     };
-    
+
+    this.delete = function(activity) {
+      Activity.delete(activity, this.reload.bind(this));
+    };
   };
 
   angular.module('cz.angular.simpleDevstack.activity.list',

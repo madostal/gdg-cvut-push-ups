@@ -26,7 +26,7 @@
                   <tr role="row">
                     <th>Type</th>
                     <th>Count</th>
-                    <th>Date / time</th>
+                    <th>Date</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -35,7 +35,7 @@
                   <tr role="row" ng-repeat="activity in vm.activities">
                     <td>{{activity.type.name}}</td>
                     <td>{{activity.count}}</td>
-                    <td>{{activity.date | date : "dd. MM. yyyy"}} / {{activity.time | date : "hh:ss"}}</td>
+                    <td>{{activity.date | date : "dd. MM. yyyy"}}</td>
                     <td class="text-right">
                       <a class="btn btn-primary" ui-sref="app.activity-edit({id:activity.id})">
                         <i class="fa fa-edit"></i>
@@ -50,13 +50,14 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-6">
-                <div class="dataTables_info">Showing 1 to 20 of 57 entries
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <uib-pagination direction-links="false" total-items="totalItems" on-ch
-                                num-pages="smallnumPages"></uib-pagination>
+              <div class="col-sm-12 text-center">
+
+                <uib-pagination previous-text="&lsaquo;" next-text="&rsaquo;"
+                                ng-model="vm.page"
+                                ng-change="vm.reload()"
+                                items-per-page="vm.activities.$itemsPerPage" total-items="vm.activities.$totalItems"
+                                boundary-link-numbers="true">
+                </uib-pagination>
               </div>
             </div>
           </div>

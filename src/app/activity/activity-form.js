@@ -1,7 +1,7 @@
 (function() {
-  var activityFormControlller = function(activityDataService) {
+  var activityFormControlller = function(activityTypesService) {
 
-    activityDataService.getActivityTypes()
+    activityTypesService.getActivityTypes()
       .then(function(types) {
         this.types = types;
       }.bind(this));

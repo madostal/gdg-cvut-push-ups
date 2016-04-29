@@ -1,24 +1,56 @@
-(function(){
+(function() {
 
   var Activity = function($resource, API_URL) {
-    return $resource(API_URL + '/activities-non-page/:id', {id: '@id'});
+
+    var pagingInterceptor = {
+      response: function(response) {
+        var data = response.data;
+        var content = data.content;
+
+        Object.defineProperty(content, '$totalItems', {value: data.totalElements});
+        Object.defineProperty(content, '$itemsPerPage', {value: data.size});
+        Object.defineProperty(content, '$totalPages', {value: data.totalPages});
+
+        return content;
+      }
+    };
+
+
+    var pagingInterceptor = {
+      response: function(response) {
+        var data = response.data;
+        var content = data.content;
+
+        Object.defineProperty(content, '$totalItems', {value: data.totalElements});
+        Object.defineProperty(content, '$itemsPerPage', {value: data.size});
+        Object.defineProperty(content, '$totalPages', {value: data.totalPages});
+
+        return content;
+      }
+    };
+    
+    return $resource(
+      API_URL + '/activities/:id',
+      {id: '@id'},
+      {
+        'query': {
+          method: 'GET', isArray: false, interceptor: pagingInterceptor
+        }
+      });
   };
 
-  var ActivityDataService = function($http, $q) {
+  var ActivityTypesService = function($http, API_URL) {
+    var activityPromise = $http.get(API_URL + '/activity-types').then(function(response) {
+      return response.data
+    });
 
-    var TYPES = [
-      {name: 'Squats'},
-      {name: 'Pushups', id: "1"},
-      {name: 'Burpies'}
-    ];
-
-    this.getActivityTypes = function(){
-      return $q.resolve(TYPES);
+    this.getActivityTypes = function() {
+      return activityPromise;
     };
   };
 
   angular.module('cz.angular.simpleDevstack.activity')
-    .service('activityDataService', ActivityDataService)
+    .service('activityTypesService', ActivityTypesService)
     .factory('Activity', Activity);
 
 })();

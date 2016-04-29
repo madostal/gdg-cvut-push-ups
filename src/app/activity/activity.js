@@ -31,7 +31,11 @@
         resolve: {
           activity: function(Activity, $stateParams) {
             var id = $stateParams.id;
-            return Activity.get({id: id});
+            return Activity.get({id: id}).$promise
+              .then(function(activity) {
+                activity.date = new Date(activity.date);
+                return activity;
+              });
           }
         }
       });
