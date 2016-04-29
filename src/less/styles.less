@@ -1,4 +1,19 @@
 @import "bootstrap.less";
 @import "app/sb-admin-2";
 @import (inline) "../bower_components/font-awesome/css/font-awesome.css";
+@icon-font-path:  "../bower_components/bootstrap/fonts/";
 
+.ng-touched.ng-invalid {
+  .has-error;
+  .form-control;
+}
+
+.ng-touched.ng-valid {
+  .has-success;
+  .form-control;
+}
+
+.ng-submitted .ng-invalid {
+  .has-error;
+  .form-control;
+}
