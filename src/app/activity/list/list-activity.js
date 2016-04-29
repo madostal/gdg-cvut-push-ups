@@ -1,18 +1,20 @@
 (function() {
 
-  var ListActivityController = function(activities, Activity) {
+  var ListActivityController = function(activities, activityService) {
     this.activities = activities;
 
     this.page = 1;
 
     this.reload = function() {
-      Activity.query({page: this.page}, function(activities) {
-        this.activities = activities;
-      }.bind(this));
+      activityService.getList(this.page)
+        .then(function(activities) {
+          this.activities = activities;
+        }.bind(this));
     };
 
     this.delete = function(activity) {
-      Activity.delete(activity, this.reload.bind(this));
+      activityService.delete(activity)
+        .then(this.reload.bind(this));
     };
   };
 

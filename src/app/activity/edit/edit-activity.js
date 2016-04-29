@@ -1,11 +1,11 @@
 (function() {
 
-  var EditActivityController = function(activity, $state) {
+  var EditActivityController = function(activity, activityService, $state) {
 
     this.activity = activity;
 
     this.save = function(activity) {
-      activity.$save()
+      activityService.save(activity)
         .then(function() {
           $state.go('app.activity');
         });

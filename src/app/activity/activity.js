@@ -9,8 +9,8 @@
         controllerAs: 'vm',
 
         resolve: {
-          activities: function(Activity) {
-            return Activity.query().$promise;
+          activities: function(activityService) {
+            return activityService.getList();
           }
         }
       })
@@ -29,13 +29,9 @@
         controllerAs: 'vm',
 
         resolve: {
-          activity: function(Activity, $stateParams) {
+          activity: function(activityService, $stateParams) {
             var id = $stateParams.id;
-            return Activity.get({id: id}).$promise
-              .then(function(activity) {
-                activity.date = new Date(activity.date);
-                return activity;
-              });
+            return activityService.getById(id);
           }
         }
       });
