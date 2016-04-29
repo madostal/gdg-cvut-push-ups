@@ -1,0 +1,25 @@
+{
+  "extends": "angular",
+  "rules": {
+    "indent": [
+      2,
+      2
+    ],
+    "quotes": [
+      1,
+      "single"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "semi": [
+      1,
+      "always"
+    ],
+    "angular/controller-as-vm": 1
+  },
+  "env": {
+    "browser": true
+  }
+}

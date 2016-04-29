@@ -1,0 +1,41 @@
+{
+  "name": "simple-devstack",
+  "description": "sipmple devstack for AngularJS",
+  "main": "index.js",
+  "authors": [
+    "Milan Lempera <milanlempera@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-bootstrap": "^1.3.2",
+    "bootstrap": "^3.3.6",
+    "ng-stats": "^2.5.2",
+    "font-awesome": "^4.6.1",
+    "angular-ui-router": "^0.2.18",
+    "angular-nvd3": "^1.0.6"
+  },
+  "overrides": {
+    "angular-i18n": {
+      "main": "./angular-locale_cs.js"
+    },
+    "bootstrap": {
+      "main": []
+    },
+    "jquery": {
+      "main": []
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.5"
+  }
+}

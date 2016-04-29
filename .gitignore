@@ -1,0 +1,9 @@
+.idea
+node_modules
+bower_components
+
+build
+report
+protractor-screenshots
+
+npm-debug.log
