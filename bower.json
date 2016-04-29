@@ -23,7 +23,8 @@
     "ng-stats": "^2.5.2",
     "font-awesome": "^4.6.1",
     "angular-ui-router": "^0.2.18",
-    "angular-nvd3": "^1.0.6"
+    "angular-nvd3": "^1.0.6",
+    "angular-resource": "^1.5.5"
   },
   "overrides": {
     "angular-i18n": {
