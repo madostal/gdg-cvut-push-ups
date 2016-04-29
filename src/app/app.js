@@ -1,7 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('cz.angular.simpleDevstack', [
+  angular.module('cz.angular.simpleDevstack',
+    [
       'angularStats',
       'ui.router',
 
@@ -34,15 +35,15 @@
           templateUrl: 'app/_tmp/table-template.html'
         });
     })
-    .run(function($rootScope) {
+    .run(function($rootScope, $log) {
       $rootScope.$on('$stateNotFound',
-        function(event, toState, fromState, toParams, fromParams, error){
-          console.error(error, toState, fromState, toParams, fromParams);
+        function(event, toState, fromState, toParams, fromParams, error) {
+          $log.error(error, toState, fromState, toParams, fromParams);
         });
 
       $rootScope.$on('$stateChangeError',
-        function(event, toState, fromState, toParams, fromParams, error){
-          console.error(error, toState, fromState, toParams, fromParams);
+        function(event, toState, fromState, toParams, fromParams, error) {
+          $log.error(error, toState, fromState, toParams, fromParams);
         });
     });
 })();

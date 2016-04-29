@@ -9,8 +9,8 @@
         controllerAs: 'vm',
 
         resolve: {
-          activities: function(activityDataService) {
-            return activityDataService.getList();
+          activities: function(Activity) {
+            return Activity.query().$promise;
           }
         }
       })
@@ -29,15 +29,17 @@
         controllerAs: 'vm',
 
         resolve: {
-          activity: function(activityDataService, $stateParams) {
+          activity: function(Activity, $stateParams) {
             var id = $stateParams.id;
-            return activityDataService.getById(id);
+            return Activity.get({id: id});
           }
         }
       });
   };
 
-  angular.module('cz.angular.simpleDevstack.activity', [
+  angular.module('cz.angular.simpleDevstack.activity',
+    [
+      'ngResource',
       'ui.router',
       'cz.angular.simpleDevstack.activity.create',
       'cz.angular.simpleDevstack.activity.edit',

@@ -1,24 +1,24 @@
 (function() {
 
-  var CreateActivityController = function(activityDataService, $state) {
+  var CreateActivityController = function(Activity, $state) {
 
     this.activity = {
       date: new Date(),
-      time: new Date()
+      count: 0
     };
 
     this.save = function(activity) {
-      activityDataService.save(activity)
+      Activity.save(activity).$promise
         .then(function() {
           $state.go('app.activity');
         });
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.create', [
+  angular.module('cz.angular.simpleDevstack.activity.create',
+    [
       'cz.angular.simpleDevstack.activity.form'
     ])
-
     .controller('CreateActivityController', CreateActivityController);
 
 })();

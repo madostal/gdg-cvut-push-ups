@@ -1,4 +1,4 @@
-<form role="form" name="activityForm" ng-submit="vm.save(activityForm)">
+<form role="form" name="activityForm" ng-submit="vm.save(activityForm)" novalidate>
 
   <div class="row">
     <div class="col-lg-12">
@@ -49,16 +49,6 @@
 
                 <div ng-messages="activityForm.date.$error">
                   <p class="text-danger" ng-message="required">You have to select date.</p>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>Time</label>
-
-                <uib-timepicker name="time" ng-model="vm.activity.time" hour-step="1" minute-step="5"></uib-timepicker>
-
-                <div ng-messages="activityForm.time.$error">
-                  <p class="text-danger" ng-message="required">You have to select time.</p>
                 </div>
               </div>
 

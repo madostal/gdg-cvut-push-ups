@@ -7,7 +7,7 @@
       return $http.get(API_URL + '/dashboard')
         .then(function(response) {
           return response.data;
-        })
+        });
     };
 
   };

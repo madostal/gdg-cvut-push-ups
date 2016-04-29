@@ -26,7 +26,8 @@
     templateUrl: 'app/activity/activity-form.html'
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.form', [
+  angular.module('cz.angular.simpleDevstack.activity.form',
+    [
       'ui.bootstrap',
       'ngMessages'
     ])
