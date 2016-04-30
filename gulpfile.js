@@ -10,7 +10,7 @@ gulp.task('devel-app-js', scriptsDevel.appScriptsProcessing);
 gulp.task('devel-vendor-js', scriptsDevel.bowerFilesToVendor);
 
 gulp.task('devel', ['less', 'devel-app-js', 'devel-vendor-js'], function() {
-  var server = plugins.liveServer.static(['src', 'build'], 8008);
+  var server = plugins.liveServer.static(['src', 'build'], 8000);
   server.start();
 
   gulp.watch(['src/less/**/*.less'], ['less']);
