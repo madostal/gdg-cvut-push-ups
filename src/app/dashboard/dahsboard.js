@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('cz.angular.simpleDevstack.dashboard', [
-    'cz.angular.simpleDevstack.dashboard.component.activityChart',
-    'cz.angular.simpleDevstack.dashboard.component.dailyChart'
+  angular.module('cz.angular.pushups.dashboard', [
+    'cz.angular.pushups.dashboard.component.activityChart',
+    'cz.angular.pushups.dashboard.component.dailyChart'
   ])
     .config(function($stateProvider) {
 

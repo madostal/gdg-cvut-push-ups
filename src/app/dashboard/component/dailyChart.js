@@ -34,7 +34,7 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.dashboard.component.dailyChart', [
+  angular.module('cz.angular.pushups.dashboard.component.dailyChart', [
     'nvd3'
   ])
     .component('dailyChart', {

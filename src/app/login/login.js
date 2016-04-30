@@ -33,7 +33,7 @@
     $httpProvider.interceptors.push(tokenInterceptor);
   };
 
-  angular.module('cz.angular.simpleDevstack.login', [])
+  angular.module('cz.angular.pushups.login', [])
     .value('authTokenStore', {})
     .controller('LoginController', LoginController)
     .config(interceptorsConfig);

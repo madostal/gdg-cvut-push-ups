@@ -12,9 +12,9 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.edit',
+  angular.module('cz.angular.pushups.activity.edit',
     [
-      'cz.angular.simpleDevstack.activity.form'
+      'cz.angular.pushups.activity.form'
     ])
 
     .controller('EditActivityController', EditActivityController);

@@ -18,7 +18,7 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.list',
+  angular.module('cz.angular.pushups.activity.list',
     [
       'ui.bootstrap'
     ])

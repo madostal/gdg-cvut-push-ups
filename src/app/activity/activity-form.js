@@ -26,7 +26,7 @@
     templateUrl: 'app/activity/activity-form.html'
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.form',
+  angular.module('cz.angular.pushups.activity.form',
     [
       'ui.bootstrap',
       'cz.angular.common.validation'

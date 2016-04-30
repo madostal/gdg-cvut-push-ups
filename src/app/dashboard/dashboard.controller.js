@@ -10,7 +10,7 @@
 
   };
 
-  angular.module('cz.angular.simpleDevstack.dashboard')
+  angular.module('cz.angular.pushups.dashboard')
     .controller('DashboardController', DashboardController);
 
 })();

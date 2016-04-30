@@ -15,9 +15,9 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.activity.create',
+  angular.module('cz.angular.pushups.activity.create',
     [
-      'cz.angular.simpleDevstack.activity.form'
+      'cz.angular.pushups.activity.form'
     ])
     .controller('CreateActivityController', CreateActivityController);
 

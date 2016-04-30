@@ -60,7 +60,7 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.activity')
+  angular.module('cz.angular.pushups.activity')
     .service('activityService', ActivityService)
     .service('activityTypesService', ActivityTypesService)
     .factory('Activity', Activity);

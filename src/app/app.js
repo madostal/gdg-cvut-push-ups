@@ -1,14 +1,14 @@
 (function() {
   'use strict';
 
-  angular.module('cz.angular.simpleDevstack',
+  angular.module('cz.angular.pushups',
     [
       'angularStats',
       'ui.router',
 
-      'cz.angular.simpleDevstack.dashboard',
-      'cz.angular.simpleDevstack.activity',
-      'cz.angular.simpleDevstack.login'
+      'cz.angular.pushups.dashboard',
+      'cz.angular.pushups.activity',
+      'cz.angular.pushups.login'
     ])
 
     // .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
@@ -21,7 +21,7 @@
       $stateProvider
         .state('login', {
           url: '/login',
-          templateUrl: 'app/login.html',
+          templateUrl: 'app/login/login.template.html',
           controller: 'LoginController',
           controllerAs: 'vm'
         })

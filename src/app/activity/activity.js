@@ -37,13 +37,13 @@
       });
   };
 
-  angular.module('cz.angular.simpleDevstack.activity',
+  angular.module('cz.angular.pushups.activity',
     [
       'ngResource',
       'ui.router',
-      'cz.angular.simpleDevstack.activity.create',
-      'cz.angular.simpleDevstack.activity.edit',
-      'cz.angular.simpleDevstack.activity.list'
+      'cz.angular.pushups.activity.create',
+      'cz.angular.pushups.activity.edit',
+      'cz.angular.pushups.activity.list'
     ])
     .config(configRoutes);
 })();

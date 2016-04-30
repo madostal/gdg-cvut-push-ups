@@ -29,7 +29,7 @@
     };
   };
 
-  angular.module('cz.angular.simpleDevstack.dashboard.component.activityChart', [
+  angular.module('cz.angular.pushups.dashboard.component.activityChart', [
     'nvd3'
   ])
     .component('activityChart', {
