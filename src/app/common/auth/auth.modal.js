@@ -44,6 +44,6 @@
   angular.module('cz.angular.common.auth.modal', [
     'ui.bootstrap'
   ])
-    .service('authLoginModal', AuthLoginModal)
+    .service('authLoginModal', AuthLoginModal);
 
 })();

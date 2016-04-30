@@ -6,7 +6,7 @@
 
     this.$onInit = function() {
       if (this.initialCredentials)
-      this.credentials = angular.copy(this.initialCredentials)
+        this.credentials = angular.copy(this.initialCredentials);
     };
 
     this.badLogin = function(form) {
@@ -32,6 +32,6 @@
         initialCredentials: '<',
         onSuccess: '&'
       }
-    })
+    });
 
 })();

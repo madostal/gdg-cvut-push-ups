@@ -3,9 +3,8 @@ describe('cz.angular.common.auth.service', function() {
   beforeEach(module('cz.angular.common.auth.service'));
 
   beforeEach(module({
-      API_URL: 'API_URL'
-    }
-  ));
+    API_URL: 'API_URL'
+  }));
 
   it('should be defined as module', function() {
     expect(angular.module('cz.angular.common.auth.service')).toBeDefined();

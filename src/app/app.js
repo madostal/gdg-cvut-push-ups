@@ -82,7 +82,7 @@
         ngToast.danger('You must be logged!');
 
         $state.go('login');
-      })
+      });
 
     })
 

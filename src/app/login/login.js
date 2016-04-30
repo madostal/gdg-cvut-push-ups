@@ -12,6 +12,6 @@
   };
 
   angular.module('cz.angular.pushups.login', [])
-    .controller('LoginController', LoginController)
+    .controller('LoginController', LoginController);
 
 })();
