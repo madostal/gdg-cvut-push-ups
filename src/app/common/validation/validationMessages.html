@@ -1,0 +1,9 @@
+<div class="text-danger"
+     ng-messages="vm.inputField.$error"
+     ng-if="vm.inputField.$touched || vm.inputField.$$parentForm.$submitted">
+  <ng-transclude></ng-transclude>
+  <div ng-message="required">{{vm.name}} has to be filled.</div>
+  <div ng-message="number">{{vm.name}} has to be number.</div>
+  <div ng-message="min">{{vm.name}} has to be higher then {{vm.params.min}}.</div>
+  <div ng-message="max">{{vm.name}} has to be lower then {{vm.params.max}}.</div>
+</div>

@@ -29,7 +29,7 @@
   angular.module('cz.angular.simpleDevstack.activity.form',
     [
       'ui.bootstrap',
-      'ngMessages'
+      'cz.angular.common.validation'
     ])
     .component('activityForm', activityFormComponent);
 })();
