@@ -34,7 +34,7 @@
           templateUrl: 'app/app.html',
           abstract: true,
           data: {
-            //authLogged: true
+            authLogged: true
           }
         })
         .state('app.devel-form', {
