@@ -1,6 +1,6 @@
 (function() {
 
-  var ListActivityController = function(activities, activityService) {
+  var ListActivityController = function(activities, activityService, ngToast) {
     this.activities = activities;
 
     this.page = 1;
@@ -14,7 +14,10 @@
 
     this.delete = function(activity) {
       activityService.delete(activity)
-        .then(this.reload.bind(this));
+        .then(function() {
+          ngToast.success('Activity deleted!');
+          this.reload();
+        }.bind(this));
     };
   };
 
