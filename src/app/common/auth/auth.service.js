@@ -3,7 +3,7 @@
 
   var authDataStore = {};
 
-  var AuthService = function($http, API_URL) {
+  var AuthService = function($http, API_URL, $rootScope) {
     this.LOGIN_URL = API_URL + '/login';
     this.LOGOUT_URL = API_URL + '/logout';
 
@@ -26,9 +26,11 @@
      * @return Promise
      */
     this.logout = function() {
-      return $http.get(this.LOGOUT_URL)
+      return $http.post(this.LOGOUT_URL)
         .then(function(response) {
           authDataStore = {};
+
+          $rootScope.$broadcast('auth:logout');
           return response.data;
         });
     };
@@ -46,6 +48,15 @@
     this.getToken = function() {
       if (this.isAuthenticated()) {
         return authDataStore.data.token;
+      }
+    };
+
+    /**
+     * @return {object}
+     */
+    this.getUserName = function() {
+      if (this.isAuthenticated()) {
+        return authDataStore.data.name;
       }
     };
 

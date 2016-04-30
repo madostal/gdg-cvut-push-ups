@@ -15,7 +15,7 @@
       'cz.angular.pushups.login'
     ])
 
-  // .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
+    // .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
     .constant('API_URL', 'http://gdg-cvut-pushups-java.herokuapp.com')
 
     .config(function($stateProvider, $urlRouterProvider) {
@@ -36,14 +36,6 @@
           data: {
             authLogged: true
           }
-        })
-        .state('app.devel-form', {
-          url: 'activity/devel/form',
-          templateUrl: 'app/_tmp/form-template.html'
-        })
-        .state('app.devel-table', {
-          url: 'activity/devel/form',
-          templateUrl: 'app/_tmp/table-template.html'
         });
     })
 
@@ -67,11 +59,15 @@
       $rootScope.$on('$stateNotFound', errorHandler);
       $rootScope.$on('$stateChangeError', errorHandler);
 
+      $rootScope.$on('auth:logout', function() {
+        $state.go('login');
+      });
+
       $rootScope.$on('auth:forbidden', function(event, response) {
         debugger;
         ngProgress.reset();
         $log.error('Forbidden API request', response.config.url);
-        ngToast.danger('Forbidden API request: '+ response.config.url);
+        ngToast.danger('Forbidden API request: ' + response.config.url);
         // TODO redirect?
 
       });
