@@ -7,10 +7,12 @@
       'ui.router',
 
       'cz.angular.simpleDevstack.dashboard',
-      'cz.angular.simpleDevstack.activity'
+      'cz.angular.simpleDevstack.activity',
+      'cz.angular.simpleDevstack.login'
     ])
 
-    .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
+    // .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
+    .constant('API_URL', 'http://gdg-cvut-pushups-java.herokuapp.com')
 
     .config(function($stateProvider, $urlRouterProvider) {
 
@@ -19,7 +21,9 @@
       $stateProvider
         .state('login', {
           url: '/login',
-          templateUrl: 'app/login.html'
+          templateUrl: 'app/login.html',
+          controller: 'LoginController',
+          controllerAs: 'vm'
         })
         .state('app', {
           url: '/',
