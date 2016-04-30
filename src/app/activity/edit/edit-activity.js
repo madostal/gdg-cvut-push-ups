@@ -1,12 +1,13 @@
 (function() {
 
-  var EditActivityController = function(activity, activityService, $state) {
+  var EditActivityController = function($state, activity, activityService, ngToast) {
 
     this.activity = activity;
 
     this.save = function(activity) {
       activityService.save(activity)
         .then(function() {
+          ngToast.success('Activity updated!');
           $state.go('app.activity');
         });
     };

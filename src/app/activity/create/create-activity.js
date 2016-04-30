@@ -1,6 +1,6 @@
 (function() {
 
-  var CreateActivityController = function(Activity, $state) {
+  var CreateActivityController = function($state, Activity, ngToast) {
 
     this.activity = {
       date: new Date(),
@@ -10,6 +10,7 @@
     this.save = function(activity) {
       Activity.save(activity).$promise
         .then(function() {
+          ngToast.success('Activity created!');
           $state.go('app.activity');
         });
     };

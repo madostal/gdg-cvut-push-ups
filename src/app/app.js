@@ -3,9 +3,10 @@
 
   angular.module('cz.angular.pushups',
     [
-      'angularStats',
-      'ngProgress',
       'ui.router',
+      'ngToast',
+      'ngProgress',
+      'angularStats',
 
       'cz.angular.common.auth',
 
@@ -45,7 +46,8 @@
           templateUrl: 'app/_tmp/table-template.html'
         });
     })
-    .run(function($rootScope, $log, ngProgressFactory) {
+
+    .run(function($rootScope, $state, $log, ngProgressFactory, ngToast) {
       var ngProgress = ngProgressFactory.createInstance();
       ngProgress.setColor('SkyBlue');
 
@@ -66,15 +68,30 @@
       $rootScope.$on('$stateChangeError', errorHandler);
 
       $rootScope.$on('auth:forbidden', function(event, response) {
+        debugger;
         ngProgress.reset();
         $log.error('Forbidden API request', response.config.url);
-        // TODO message and redirect?
+        ngToast.danger('Forbidden API request: '+ response.config.url);
+        // TODO redirect?
+
       });
 
       $rootScope.$on('auth:loginCanceled', function() {
         ngProgress.reset();
         $log.error('event loginCanceled', arguments);
-        // TODO message and redirect?
+        ngToast.danger('You must be logged!');
+
+        $state.go('login');
+      })
+
+    })
+
+    .config(function(ngToastProvider) {
+      ngToastProvider.configure({
+        verticalPosition: 'bottom',
+        horizontalPosition: 'left',
+        dismissButton: true
       });
     });
+
 })();

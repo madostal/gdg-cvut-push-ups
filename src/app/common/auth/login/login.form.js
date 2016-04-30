@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var LoginController = function($rootScope, $state, authService) {
+  var LoginController = function($rootScope, $state, authService, ngToast) {
     this.credentials = {};
 
     this.$onInit = function() {
@@ -14,7 +14,7 @@
       form.$setUntouched();
 
       this.credentials = {};
-      this.isBadLogin = true;
+      ngToast.danger('Login failed!');
     };
 
     this.login = function(form) {
