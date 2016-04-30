@@ -36,14 +36,12 @@
         });
     })
     .run(function($rootScope, $log) {
-      $rootScope.$on('$stateNotFound',
-        function(event, toState, fromState, toParams, fromParams, error) {
-          $log.error(error, toState, fromState, toParams, fromParams);
-        });
 
-      $rootScope.$on('$stateChangeError',
-        function(event, toState, fromState, toParams, fromParams, error) {
-          $log.error(error, toState, fromState, toParams, fromParams);
-        });
+      var errorHandler = function(event, toState, fromState, toParams, fromParams, error) {
+        $log.error(error, toState, fromState, toParams, fromParams);
+      };
+
+      $rootScope.$on('$stateNotFound', errorHandler);
+      $rootScope.$on('$stateChangeError', errorHandler);
     });
 })();

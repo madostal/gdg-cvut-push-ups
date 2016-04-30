@@ -18,7 +18,8 @@
       "always"
     ],
     "angular/controller-as-vm": 0,
-    "angular/no-service-method": 0
+    "angular/no-service-method": 0,
+    "angular/on-watch": 0
   },
   "env": {
     "browser": true
