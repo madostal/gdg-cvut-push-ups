@@ -6,6 +6,8 @@
       'angularStats',
       'ui.router',
 
+      'cz.angular.common.auth',
+
       'cz.angular.pushups.dashboard',
       'cz.angular.pushups.activity',
       'cz.angular.pushups.login'
@@ -47,5 +49,13 @@
 
       $rootScope.$on('$stateNotFound', errorHandler);
       $rootScope.$on('$stateChangeError', errorHandler);
+
+      $rootScope.$on('auth:forbidden', function(event, response) {
+        $log.error('Forbidden API request', response.config.url)
+      });
+
+      $rootScope.$on('auth:loginCanceled', function() {
+        $log.error('event loginCanceled', arguments)
+      });
     });
 })();
