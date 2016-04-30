@@ -1,14 +1,16 @@
 (function() {
   'use strict';
 
-  var tokenInterceptor = function(authDataStore) {
+  var tokenInterceptor = function($injector) {
     return {
       request: function(config) {
-        config.headers = config.headers || {};
-        if (authDataStore.data) {
+        var authService = $injector.get('authService');
 
-          config.headers['X-Auth-Token'] = authDataStore.data.token;
+        if (authService.isAuthenticated()) {
+          config.headers = config.headers || {};
+          config.headers['X-Auth-Token'] = authService.getToken();
         }
+        
         return config;
       }
     };

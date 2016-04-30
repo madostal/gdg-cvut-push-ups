@@ -4,7 +4,8 @@
   </div>
   <div class="panel-body">
     <form role="form"
-          name="loginForm">
+          name="loginForm"
+          ng-submit="vm.login(loginForm)">
       <fieldset>
         <div class="alert alert-danger"
               ng-if="vm.isBadLogin">
@@ -21,7 +22,7 @@
                  ng-model="vm.credentials.password">
         </div>
 
-        <a ng-click="vm.login(loginForm)" class="btn btn-lg btn-success btn-block">Login</a>
+        <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
       </fieldset>
     </form>
   </div>

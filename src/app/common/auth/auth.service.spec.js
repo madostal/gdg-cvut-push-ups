@@ -1,9 +1,8 @@
-fdescribe('cz.angular.common.auth.service', function() {
+describe('cz.angular.common.auth.service', function() {
 
   beforeEach(module('cz.angular.common.auth.service'));
 
-  beforeEach(module(
-    {
+  beforeEach(module({
       API_URL: 'API_URL'
     }
   ));
@@ -31,7 +30,7 @@ fdescribe('cz.angular.common.auth.service', function() {
         status: 401
       };
 
-      expect(this.authService.isRecoverable(response)).toBe(true);
+      expect(this.authService.isRequestRecoverable(response)).toBe(true);
     });
 
     it('should mark request to login as unrecoverable', function() {
@@ -43,7 +42,7 @@ fdescribe('cz.angular.common.auth.service', function() {
         status: 401
       };
 
-      expect(this.authService.isRecoverable(response)).toBe(false);
+      expect(this.authService.isRequestRecoverable(response)).toBe(false);
     });
 
     it('should mark request with  status 403 as unrecoverable', function() {
@@ -55,7 +54,7 @@ fdescribe('cz.angular.common.auth.service', function() {
         status: 403
       };
 
-      expect(this.authService.isRecoverable(response)).toBe(false);
+      expect(this.authService.isRequestRecoverable(response)).toBe(false);
     });
 
   });

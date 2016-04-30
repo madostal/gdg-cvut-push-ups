@@ -7,7 +7,7 @@
       responseError: function(response) {
         return $injector.invoke(function(authLoginModal, authService, $http, $q, $rootScope) {
 
-          if (authService.isRecoverable(response)) {
+          if (authService.isRequestRecoverable(response)) {
 
             return authLoginModal.prepareLoginModal()
               .then(function() {

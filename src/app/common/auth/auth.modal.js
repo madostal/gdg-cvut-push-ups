@@ -21,6 +21,9 @@
         }.bind(this));
     };
 
+    /**
+     * @return {Promise}
+     */
     this.prepareLoginModal = function() {
       if (!this.modalInstance) {
         this.createModalInstance_();

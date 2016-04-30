@@ -30,7 +30,10 @@
         .state('app', {
           url: '/',
           templateUrl: 'app/app.html',
-          abstract: true
+          abstract: true,
+          data: {
+            authLogged: true
+          }
         })
         .state('app.devel-form', {
           url: 'activity/devel/form',
@@ -51,11 +54,13 @@
       $rootScope.$on('$stateChangeError', errorHandler);
 
       $rootScope.$on('auth:forbidden', function(event, response) {
-        $log.error('Forbidden API request', response.config.url)
+        $log.error('Forbidden API request', response.config.url);
+        // TODO message and redirect?
       });
 
       $rootScope.$on('auth:loginCanceled', function() {
         $log.error('event loginCanceled', arguments)
+        // TODO message and redirect?
       });
     });
 })();
