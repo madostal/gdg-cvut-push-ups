@@ -17,7 +17,7 @@
   };
 
   var tokenInterceptorsConfig = function($httpProvider) {
-    $httpProvider.interceptors.push(tokenInterceptor);
+    // $httpProvider.interceptors.push(tokenInterceptor);
   };
 
   angular.module('cz.angular.common.auth.interceptor.token', [

@@ -25,7 +25,7 @@
   };
 
   var accessInterceptorConfig = function($httpProvider) {
-    $httpProvider.interceptors.push(accessInterceptor);
+    // $httpProvider.interceptors.push(accessInterceptor);
   };
 
   angular.module('cz.angular.common.auth.interceptor.access', [
