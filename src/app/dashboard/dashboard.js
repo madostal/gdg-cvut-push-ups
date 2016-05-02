@@ -1,10 +1,7 @@
 (function() {
   'use strict';
 
-  var DashboardController = function(dashboardDataService) {
-
-    // TODO 2: dashboard resolve
-    var dashboardData = dashboardDataService.loadData();
+  var DashboardController = function(dashboardData) {
 
     this.userRating = dashboardData.rating;
     this.todayPerformance = dashboardData.today;
@@ -19,7 +16,12 @@
       url: 'dashboard',
       templateUrl: 'app/dashboard/dashboard.html',
       controller: 'DashboardController',
-      controllerAs: 'dashboard'
+      controllerAs: 'dashboard',
+      resolve: {
+        dashboardData: function(dashboardDataService) {
+          return dashboardDataService.loadData();
+        }
+      }
       // TODO 2: dashboard resolve
     });
   };
@@ -31,7 +33,7 @@
     'cz.angular.pushups.dashboard.component.dailyChart'
   ])
     .controller('DashboardController', DashboardController)
-
+    .config(configFunction);
   // TODO 2: dashboard config
 
 })();

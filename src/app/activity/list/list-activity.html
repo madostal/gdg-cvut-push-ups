@@ -32,11 +32,51 @@
                   </thead>
                   <tbody>
 
-                  <!-- ng-repeat a filter date -->
-                  <tr role="row" ng-repeat="activity in vm.activities">
+                  <tr role="row">
+                    <td>Activity</td>
+                    <td>11</td>
+                    <td>2.4.2016</td>
+                    <td class="text-right">
+                      <a class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger">
+                        <i class="fa fa-remove"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td>Activity</td>
+                    <td>11</td>
+                    <td>2.4.2016</td>
+                    <td class="text-right">
+                      <a class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger">
+                        <i class="fa fa-remove"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td>Activity</td>
+                    <td>11</td>
+                    <td>2.4.2016</td>
+                    <td class="text-right">
+                      <a class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger">
+                        <i class="fa fa-remove"></i>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <!-- TODO ng-repeat a filter date -->
+                  <tr role="row">
                     <td>{{activity.type.name}}</td>
                     <td>{{activity.count}}</td>
-                    <td>{{activity.date | date : "dd. MM. yyyy"}}</td>
+                    <td>{{activity.date}}</td>
                     <td class="text-right">
                       <a class="btn btn-primary" ui-sref="app.activity-edit({id:activity.id})">
                         <i class="fa fa-edit"></i>
@@ -46,6 +86,7 @@
                       </a>
                     </td>
                   </tr>
+
                   </tbody>
                 </table>
               </div>

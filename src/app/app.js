@@ -22,7 +22,7 @@
 
       // TODO 1: oživení routingu
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/dashboard');
 
       $stateProvider
         .state('app', {
@@ -30,20 +30,6 @@
           templateUrl: 'app/app.html'
         })
 
-        .state('app.dashboard', {
-          url: 'dashboard',
-          templateUrl: 'app/dashboard/dashboard.html'
-        })
-
-        .state('app.activity', {
-          url:'activity',
-          templateUrl: 'app/activity/list/list-activity.html'
-        })
-
-        .state('app.activity-create', {
-          url: 'activity/create',
-          templateUrl: 'app/activity/create/create-activity.html'
-        })
     })
 
     .run(function($rootScope, $state, $log, ngProgressFactory, ngToast) {

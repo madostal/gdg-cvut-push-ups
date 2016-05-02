@@ -9,8 +9,8 @@
         controllerAs: 'vm',
 
         resolve: {
-          activities: function(activityService) {
-            return activityService.getList(); // z activity
+          activities: function(Activity) {
+            return Activity.query();
           }
         }
       })
@@ -45,5 +45,5 @@
       'cz.angular.pushups.activity.edit',
       'cz.angular.pushups.activity.list'
     ])
-//    .config(configRoutes);
+    // TODO configRoutes
 })();

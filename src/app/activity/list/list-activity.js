@@ -1,14 +1,13 @@
 (function() {
 
-  var ListActivityController = function(activities, activityService, ngToast) {
+  var ListActivityController = function(activities, ngToast) {
     this.activities = activities;
-    
+
   };
 
-  angular.module('cz.angular.pushups.activity.list',
-    [
-      'ui.bootstrap'
-    ])
+  angular.module('cz.angular.pushups.activity.list', [
+    'ui.bootstrap'
+  ])
 
     .controller('ListActivityController', ListActivityController);
 
