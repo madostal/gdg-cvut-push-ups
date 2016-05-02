@@ -9,16 +9,10 @@
   ])
     .config(function($stateProvider) {
 
+      
       $stateProvider.state('app.dashboard', {
         url: 'dashboard',
-        templateUrl: 'app/dashboard/dashboard.html',
-        controller: 'DashboardController',
-        controllerAs: 'dashboard',
-        resolve: {
-          dashboardData: function(dashboardDataService) {
-            return dashboardDataService.loadData();
-          }
-        }
+        // TODO 2: dashboard
       });
     });
 

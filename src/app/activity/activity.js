@@ -10,7 +10,7 @@
 
         resolve: {
           activities: function(activityService) {
-            return activityService.getList();
+            return activityService.getList(); // z activity
           }
         }
       })

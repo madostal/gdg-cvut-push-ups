@@ -2,6 +2,8 @@
   'use strict';
 
   var Controller = function() {
+    
+    // TODO odkaz
 
     this.options = {
       chart: {

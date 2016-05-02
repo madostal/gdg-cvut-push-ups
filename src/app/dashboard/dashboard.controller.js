@@ -3,6 +3,8 @@
 
   var DashboardController = function(dashboardData) {
 
+    // TODO získání dat ze služby
+
     this.userRating = dashboardData.rating;
     this.todayPerformance = dashboardData.today;
     this.dailyPerformance = dashboardData.month.daily;

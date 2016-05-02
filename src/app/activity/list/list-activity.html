@@ -32,6 +32,7 @@
                   </thead>
                   <tbody>
 
+                  <!-- ng-repeat a filter date -->
                   <tr role="row" ng-repeat="activity in vm.activities">
                     <td>{{activity.type.name}}</td>
                     <td>{{activity.count}}</td>
@@ -51,13 +52,7 @@
             </div>
             <div class="row">
               <div class="col-sm-12 text-center">
-
-                <uib-pagination previous-text="&lsaquo;" next-text="&rsaquo;"
-                                ng-model="vm.page"
-                                ng-change="vm.reload()"
-                                items-per-page="vm.activities.$itemsPerPage" total-items="vm.activities.$totalItems"
-                                boundary-link-numbers="true">
-                </uib-pagination>
+                TODO stránkování
               </div>
             </div>
           </div>

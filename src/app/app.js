@@ -20,6 +20,8 @@
 
     .config(function($stateProvider, $urlRouterProvider) {
 
+      // TODO 1: oživení routingu
+
       $urlRouterProvider.otherwise('/login');
 
       $stateProvider
@@ -34,6 +36,7 @@
           templateUrl: 'app/app.html',
           abstract: true,
           data: {
+            // dopsat
             authLogged: true
           }
         });
