@@ -38,7 +38,7 @@
       },
       controller: Controller,
       controllerAs: 'activityChart',
-      templateUrl: 'app/dashboard/component/activityChart.template.html'
+      templateUrl: 'app/dashboard/component/activity-chart.html'
     });
 
 })();

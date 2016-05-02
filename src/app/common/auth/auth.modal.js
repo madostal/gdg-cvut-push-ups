@@ -7,7 +7,7 @@
 
     this.createModalInstance_ = function() {
       this.modalInstance = $uibModal.open({
-        templateUrl: 'app/common/auth/auth.modal.template.html',
+        templateUrl: 'app/common/auth/auth.modal.html',
         controller: AuthModalLoginController,
         controllerAs: 'auth'
       });

@@ -43,7 +43,7 @@
       },
       controller: Controller,
       controllerAs: 'dailyChart',
-      templateUrl: 'app/dashboard/component/dailyChart.template.html'
+      templateUrl: 'app/dashboard/component/daily-chart.html'
     });
 
 })();
