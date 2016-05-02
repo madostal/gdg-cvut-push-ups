@@ -23,7 +23,9 @@
     };
   };
 
-  angular.module('cz.angular.common.auth.login', [])
+  angular.module('cz.angular.common.auth.login', [
+    'cz.angular.common.auth.service'
+  ])
     .component('loginForm', {
       templateUrl: 'app/common/auth/login/login-form.component.html',
       controller: LoginController,
