@@ -25,7 +25,7 @@
 
   angular.module('cz.angular.common.auth.login', [])
     .component('loginForm', {
-      templateUrl: 'app/common/auth/login/login.form.html',
+      templateUrl: 'app/common/auth/login/login-form.component.html',
       controller: LoginController,
       controllerAs: 'vm',
       bindings: {
