@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
 
   var CreateActivityController = function($state, Activity, ngToast) {
 

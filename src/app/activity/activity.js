@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   var configRoutes = function($stateProvider) {
 
     $stateProvider

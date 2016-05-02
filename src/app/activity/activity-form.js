@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   var activityFormControlller = function(activityTypesService) {
 
     activityTypesService.getActivityTypes()

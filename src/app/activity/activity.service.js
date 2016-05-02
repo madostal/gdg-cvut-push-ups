@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
 
   var ActivityTypesService = function($http, API_URL) {
     var activityPromise = $http.get(API_URL + '/activity-types')

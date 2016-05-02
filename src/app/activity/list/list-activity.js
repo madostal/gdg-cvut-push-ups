@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
 
   var ListActivityController = function(activities, ngToast) {
     this.activities = activities;
