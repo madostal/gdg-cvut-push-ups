@@ -1,4 +1,4 @@
-(function(){
+(function() {
 
   var LoginInfoComponentController = function(authService) {
     this.logout = authService.logout.bind(authService);
@@ -10,7 +10,7 @@
     controller: LoginInfoComponentController,
     controllerAs: 'vm'
   };
-  
+
   angular.module('cz.angular.common.auth.loginInfo',
     [
       'cz.angular.common.auth.service'

@@ -78,7 +78,8 @@
       event.preventDefault(); // stop routing
 
       authLoginModal.prepareLoginModal()
-        .then(function() {
+        .then(
+          function() {
             if (this.checkPermissionsAndBroadcastIfError_(toState)) {
               $state.go(toState, toParams);
             }

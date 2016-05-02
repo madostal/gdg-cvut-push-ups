@@ -10,7 +10,7 @@
           config.headers = config.headers || {};
           config.headers['X-Auth-Token'] = authService.getToken();
         }
-        
+
         return config;
       }
     };
