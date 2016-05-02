@@ -7,3 +7,4 @@ report
 protractor-screenshots
 
 npm-debug.log
+steps/

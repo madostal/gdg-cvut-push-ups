@@ -2,9 +2,9 @@
   'use strict';
 
   var Controller = function() {
-    
-    // TODO odkaz
 
+    // https://github.com/krispo/angular-nvd3/blob/gh-pages/js/multiBarChart.js
+    
     this.options = {
       chart: {
         type: 'multiBarChart',

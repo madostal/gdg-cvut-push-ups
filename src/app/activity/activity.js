@@ -45,5 +45,5 @@
       'cz.angular.pushups.activity.edit',
       'cz.angular.pushups.activity.list'
     ])
-    .config(configRoutes);
+//    .config(configRoutes);
 })();

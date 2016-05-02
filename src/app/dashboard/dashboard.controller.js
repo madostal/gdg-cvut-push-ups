@@ -1,9 +1,10 @@
 (function() {
   'use strict';
 
-  var DashboardController = function(dashboardData) {
+  var DashboardController = function(dashboardDataService) {
 
-    // TODO získání dat ze služby
+    // TODO 2: dashboard resolve
+    var dashboardData = dashboardDataService.loadData();
 
     this.userRating = dashboardData.rating;
     this.todayPerformance = dashboardData.today;
