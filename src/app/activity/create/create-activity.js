@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var CreateActivityController = function($state, Activity, activityTypesService, ngToast) {
+  var CreateActivityController = function($state, activityService, activityTypesService, ngToast) {
 
     activityTypesService.getActivityTypes()
       .then(function(types) {
