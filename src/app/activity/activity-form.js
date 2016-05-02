@@ -1,5 +1,5 @@
 (function() {
-  var activityFormControlller = function(activityTypesService) {
+  var activityFormController = function(activityTypesService) {
 
     activityTypesService.getActivityTypes()
       .then(function(types) {
@@ -21,7 +21,7 @@
       onSave: '&'
     },
 
-    controller: activityFormControlller,
+    controller: activityFormController,
     controllerAs: 'vm',
     templateUrl: 'app/activity/activity-form.html'
   };
