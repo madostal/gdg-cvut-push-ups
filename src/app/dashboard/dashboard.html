@@ -19,7 +19,7 @@
               <div class="col-xs-9 text-right">
                 <div>You are in top</div>
                 <!--TODO 2 userRating-->
-                <div class="huge">{{dashboard.userRating}} %</div>
+                <div class="huge">XX %</div>
               </div>
             </div>
           </div>
@@ -46,7 +46,20 @@
 
 
     <!--TODO 2 komponenta grafu dailyPerformance -->
-    <daily-chart data="dashboard.dailyPerformance"></daily-chart>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="fa fa-bar-chart-o"></i> Daily Chart
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+        tady bude graf
+        <a href="http://krispo.github.io/angular-nvd3/#/quickstart">
+          http://krispo.github.io/angular-nvd3/#/quickstart
+        </a>
+
+      </div>
+      <!-- /.panel-body -->
+    </div>
 
 
   </div>
