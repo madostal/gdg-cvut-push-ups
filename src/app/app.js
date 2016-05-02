@@ -27,8 +27,7 @@
       $stateProvider
         .state('app', {
           url: '/',
-          templateUrl: 'app/app.html',
-          abstract: true
+          templateUrl: 'app/app.html'
         })
 
         .state('app.dashboard', {
