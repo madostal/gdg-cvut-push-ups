@@ -1,8 +1,14 @@
+var del = require('del');
+var runSequence = require('run-sequence');
+
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
+var assets = require('./gulp-tasks/assets');
 var styles = require('./gulp-tasks/styles');
+var scriptsBuild = require('./gulp-tasks/scripts-build');
 var scriptsDevel = require('./gulp-tasks/scripts-devel');
+var revisions = require('./gulp-tasks/revisions');
 
 gulp.task('less', styles.less);
 
@@ -31,4 +37,23 @@ gulp.task('devel', ['less', 'devel-app-js', 'devel-vendor-js'], function() {
     })
   });
 
+});
+
+gulp.task('build-clean', function() {
+  return del(['dist/']);
+});
+
+gulp.task('build-assets', assets.copy);
+gulp.task('build-css', styles.cssmin);
+gulp.task('build-app-js', scriptsBuild.appScriptsProcessing);
+gulp.task('build-vendor-js', scriptsBuild.bowerFilesToVendor);
+gulp.task('build-revisions', revisions.revisions);
+gulp.task('build-index', revisions.indexHtml);
+
+gulp.task('build', function(callback) {
+  runSequence('build-clean',
+    ['build-app-js', 'build-vendor-js', 'build-css', 'build-assets'],
+    'build-revisions',
+    'build-index',
+    callback);
 });
