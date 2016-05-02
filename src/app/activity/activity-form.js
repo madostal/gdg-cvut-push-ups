@@ -15,21 +15,19 @@
     };
   };
 
-  var activityFormComponent = {
-    bindings: {
-      activity: '=',
-      onSave: '&'
-    },
-
-    controller: activityFormController,
-    controllerAs: 'vm',
-    templateUrl: 'app/activity/activity-form.html'
-  };
-
   angular.module('cz.angular.pushups.activity.form',
     [
       'ui.bootstrap',
       'cz.angular.common.validation'
     ])
-    .component('activityForm', activityFormComponent);
+    .component('activityForm', {
+      bindings: {
+        activity: '=',
+        onSave: '&'
+      },
+
+      controller: activityFormController,
+      controllerAs: 'vm',
+      templateUrl: 'app/activity/activity-form.html'
+    });
 })();
