@@ -12,13 +12,12 @@
   };
 
   var Activity = function($resource, API_URL) {
-
+    
     // TODO 3 - použít $resource
 
   };
 
   angular.module('cz.angular.pushups.activity')
-    .service('activityService', ActivityService)
     .service('activityTypesService', ActivityTypesService)
     .factory('Activity', Activity);
 

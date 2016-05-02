@@ -8,38 +8,43 @@
       'ngProgress',
       'angularStats',
 
-      'cz.angular.common.auth',
+//      'cz.angular.common.auth',
 
-      'cz.angular.pushups.dashboard',
-      'cz.angular.pushups.activity',
-      'cz.angular.pushups.login'
+     'cz.angular.pushups.dashboard',
+     'cz.angular.pushups.activity',
+     'cz.angular.pushups.login'
     ])
 
-    // .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
-    .constant('API_URL', 'http://gdg-cvut-pushups-java.herokuapp.com')
+    .constant('API_URL', 'http://private-2b637-pushups.apiary-mock.com')
+    //.constant('API_URL', 'http://gdg-cvut-pushups-java.herokuapp.com')
 
     .config(function($stateProvider, $urlRouterProvider) {
 
       // TODO 1: oživení routingu
 
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/dashboard');
 
       $stateProvider
-        .state('login', {
-          url: '/login',
-          templateUrl: 'app/login/login.html',
-          controller: 'LoginController',
-          controllerAs: 'vm'
-        })
         .state('app', {
           url: '/',
           templateUrl: 'app/app.html',
-          abstract: true,
-          data: {
-            // dopsat
-            authLogged: true
-          }
-        });
+          abstract: true
+        })
+
+        .state('app.dashboard', {
+          url: 'dashboard',
+          templateUrl: 'app/dashboard/dashboard.html'
+        })
+
+        .state('app.activity', {
+          url:'activity',
+          templateUrl: 'app/activity/list/list-activity.html'
+        })
+
+        .state('app.activity-create', {
+          url: 'activity/create',
+          templateUrl: 'app/activity/create/create-activity.html'
+        })
     })
 
     .run(function($rootScope, $state, $log, ngProgressFactory, ngToast) {
@@ -71,7 +76,6 @@
         ngProgress.reset();
         $log.error('Forbidden API request', response.config.url);
         ngToast.danger('Forbidden API request: ' + response.config.url);
-        // TODO redirect?
 
       });
 
