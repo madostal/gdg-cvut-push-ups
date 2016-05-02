@@ -2,8 +2,8 @@
   "extends": "angular",
   "rules": {
     "indent": [
-      2,
-      0
+      0,
+      2
     ],
     "quotes": [
       1,
