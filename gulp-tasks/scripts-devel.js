@@ -15,7 +15,6 @@ exports.appScriptsProcessing = function() {
     .pipe(plugins.eslint.format())
     .pipe(plugins.ignore.exclude('*.spec.js'))
     .pipe(plugins.angularFilesort().on('error', errorHandlers.createForTask('angularFilesort')))
-    .pipe(plugins.ngAnnotate())
     .pipe(plugins.pseudoconcatJs('scripts.js', pseudoconcatOptions))
     .pipe(gulp.dest('build/'));
 };

@@ -8,3 +8,11 @@ exports.less = function() {
     .pipe(plugins.less().on('error', errorHandlers.createForTask('less')))
     .pipe(gulp.dest('build/'));
 };
+
+exports.cssmin = function() {
+  return gulp.src('src/less/styles.less')
+    .pipe(plugins.less().on('error', errorHandlers.createForTask('less')))
+    .pipe(plugins.cssmin())
+    .pipe(gulp.dest('dist/'));
+};
+
