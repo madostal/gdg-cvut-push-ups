@@ -22,7 +22,7 @@
 
       // TODO 1: oživení routingu
 
-      $urlRouterProvider.otherwise('/dashboard');
+      $urlRouterProvider.otherwise('/');
 
       $stateProvider
         .state('app', {
