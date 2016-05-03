@@ -10,7 +10,7 @@
 Stáhněte tento balíček kamkoli k sobě. 
 
 ```
-git clone https://bitbucket.org/angular_cz/simple-devstack
+git clone https://bitbucket.org/angular_cz/gdg-cvut-push-ups
 
  npm install
 
