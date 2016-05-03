@@ -12,7 +12,7 @@
 
         resolve: {
           activities: function(Activity) {
-            return Activity.query();
+            return Activity.query().$promise;
           }
         }
       })
