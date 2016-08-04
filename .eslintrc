@@ -2,24 +2,24 @@
   "extends": "angular",
   "rules": {
     "indent": [
-      0,
+      "off",
       2
     ],
     "quotes": [
-      1,
+      "warn",
       "single"
     ],
     "linebreak-style": [
-      2,
+      "error",
       "unix"
     ],
     "semi": [
-      1,
+      "warn",
       "always"
     ],
-    "angular/controller-as-vm": 0,
-    "angular/no-service-method": 0,
-    "angular/on-watch": 0
+    "angular/controller-as-vm": "off",
+    "angular/no-service-method": "off",
+    "angular/on-watch": "off"
   },
   "env": {
     "browser": true
